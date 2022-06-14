@@ -18,7 +18,8 @@ pandoc $1 -o $2 \
 --toc-depth 6 \
 --number-sections \
 --top-level-division=chapter \
---highlight-style tango
+--highlight-style tango \
+-F mermaid-filter
 
 #if [ $? -eq 0 ]
 #then
