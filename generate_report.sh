@@ -6,10 +6,10 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # if this machine does not have the template in place, put it there!
-if [ ! -e /usr/share/pandoc/data/templates/eisvogel.latex ]
-then
-	sudo cp eisvogel.latex /usr/share/pandoc/data/templates/
-fi
+#if [ ! -e /usr/share/pandoc/data/templates/eisvogel.latex ]
+#then
+#	sudo cp eisvogel.latex ~/.pandoc/templates/eisvogel.latex 
+#fi
 
 pandoc $1 -o $2 \
 --from markdown+yaml_metadata_block+raw_html \
@@ -20,7 +20,7 @@ pandoc $1 -o $2 \
 --top-level-division=chapter \
 --highlight-style tango
 
-if [ $? -eq 0 ]
-then
-	evince $2
-fi
+#if [ $? -eq 0 ]
+#then
+#	evince $2
+#fi
